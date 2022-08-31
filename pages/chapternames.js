@@ -23,27 +23,15 @@ export default function Part1({allSyllabus}) {
   )
 }
 
-// // This gets called on every request
-// export async function getServerSideProps() {
-//     // Fetch data from external API
-//     connectDb()
-//     let syllabus = await Syllabus.find({part:"part 1"})
-   
-    
-//     return { props: { allSyllabus:JSON.parse(JSON.stringify(syllabus)) } }
-//   }
 
 export async function getServerSideProps(context) {
     // Fetch data from external API
     connectDb()
-    // .replace(/['"]+/g, '') to remove quotes "" from url parameter. if I don't do that then I won't be able to search in db with that string.
-    // let part = (context.query.part).replace(/['"]+/g, '');
     let part = (context.query.part);
     let subject = (context.query.subject);
     let classNm = (context.query.classNm);
     
     let questions = await Syllabus.find({subject:subject,part:part,classNm:classNm})
-    console.log("ye wala", questions)
     
     return { props: { allSyllabus:JSON.parse(JSON.stringify(questions)) } }
   }

@@ -40,7 +40,7 @@ export default function Home({allSyllabus}) {
   return (
 <div className='lg:mb-28 mb-44'>
 <div className='mx-auto mt-12 flex flex-col items-center justify-center'>
-<h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1'>Notes For CBSE Classes 6 - 10 </h1>
+<h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1'>Notes For MSB Classes 5 - 10 </h1>
 
   <h1 className='mt-2 mb-4 text-purple-500 text-lg text-center'>Enter your question here </h1>
 <input type="text" placeholder="Enter your question " className="border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2
@@ -57,14 +57,14 @@ export default function Home({allSyllabus}) {
      
       {searchResult.map((question)=>{
         return <div className='container flex flex-col  w-screen mt-6 text-justify p-4' key={question._id}>
-        <h1 className='pl-4 font-bold text-2xl lg:text-3xl text-green-700'>{question.question}</h1>
+        <h1 className='pl-4 font-bold text-2xl lg:text-3xl text-violet-700'>{question.question}</h1>
         <hr></hr>
         <div className='mt-4 p-4 lg:p-4 text-lg'>{ ReactHtmlParser(question.answer) }</div>
         </div>
       })}
     </div>}
 
-<Select allSyllabus={allSyllabus}/>
+{!showSearch && <Select allSyllabus={allSyllabus}/>}
 </div>
     
   )

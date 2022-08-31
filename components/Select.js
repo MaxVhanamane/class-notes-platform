@@ -3,13 +3,14 @@ import Link from "next/link"
 
 export default function Select({allSyllabus}) {
   let classNm= allSyllabus.map((cl)=>{return cl.classNm})
-  let uniqueclassNm = [...new Set(classNm)]
+  let uniqueclassNm = [...new Set(classNm)].sort(function (a, b) {  return a - b;  });
+
 
   let subject= allSyllabus.map((sub)=>{return sub.subject})
   let uniquesubjectName= [...new Set(subject)]
 
   let part= allSyllabus.map((part)=>{return part.part})
-  let uniquepartName= [...new Set(part)]
+  let uniquepartName= [...new Set(part)].sort()
  
   const [selectClass, setSelectClass] = useState();
   const [subjectName, setSubjectName] = useState();
@@ -93,11 +94,3 @@ export default function Select({allSyllabus}) {
 
 
 
-// <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
-// <select id="countries" >
-//   <option selected="">Choose a country</option>
-//   <option value="US">United States</option>
-//   <option value="CA">Canada</option>
-//   <option value="FR">France</option>
-//   <option value="DE">Germany</option>
-// </select>

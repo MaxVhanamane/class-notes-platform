@@ -1,6 +1,5 @@
 import React from 'react'
 import { useRouter } from "next/router";
-import Link from "next/link"
 import connectDb from './../../middleware/mongoose';
 import Syllabus from './../../models/syllabus';
 import ReactHtmlParser from 'react-html-parser';
@@ -10,15 +9,15 @@ export default function Chapters({allQuestions}) {
     const part = (router.query.part).replace(/['"]+/g, '').replace(/\s+/, "") ;
 
   return (
-    <div className='container  mt-16  mb-6'>
+    <div className='container  mt-16  mb-56'>
       {allQuestions.map((question)=>{
         return <div className='container flex flex-col  w-screen mt-6 text-justify p-4' key={question._id}>
-        <h1 className='font-bold text-2xl lg:text-3xl text-green-700 pl-4'>{question.question}</h1>
+        <h1 className='font-bold text-2xl lg:text-3xl text-violet-700 pl-4'>{question.question}</h1>
         <hr></hr>
         <div className='mt-4 p-4 lg:p-4 text-lg'>{ ReactHtmlParser(question.answer) }</div>
         </div>
       })}
-     <div className="flex justify-center items-center"><Link href={`/${part}`} ><button className=' bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Back</button></Link></div>
+     <div onClick={() => router.back()} className="flex justify-center items-center"><button  className=' bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Back</button></div>
 
     </div>
   )
