@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 export default function Part1({allSyllabus}) {
     let chapters= allSyllabus.map((chapter)=>{return chapter.chapterName})
-    let uniqueChapterNames = [...new Set(chapters)]
+    let uniqueChapterNames = [...new Set(chapters)].sort()
     const router = useRouter();
 
   return (
