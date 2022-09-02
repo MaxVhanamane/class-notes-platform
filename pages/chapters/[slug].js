@@ -9,7 +9,7 @@ export default function Chapters({allQuestions}) {
     const part = (router.query.part).replace(/['"]+/g, '').replace(/\s+/, "") ;
 
   return (
-    <div className='container  mt-16  mb-56'>
+    <div className='container  mt-16  mb-32'>
       {allQuestions.map((question)=>{
         return <div className='container flex flex-col  w-screen mt-6 text-justify p-4' key={question._id}>
         <h1 className='font-bold text-2xl lg:text-3xl text-violet-700 pl-4'>{question.question}</h1>

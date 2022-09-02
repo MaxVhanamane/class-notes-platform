@@ -10,7 +10,7 @@ export default function Part1({allSyllabus}) {
     const router = useRouter();
 
   return (
-    <div className='mt-20 flex flex-col items-center justify-center'>
+    <div className='pt-20 flex flex-col items-center justify-center'>
       <h1 className='text-center text-purple-900 font-bold text-xl'> Name of the Chapters</h1>
       <ol className='mt-6 list-decimal flex flex-col gap-6'>
        {uniqueChapterNames.sort().map((chapter)=>{

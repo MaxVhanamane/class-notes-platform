@@ -5,7 +5,7 @@ export default function Navbar() {
     const [toggle,setToggle]=useState(false)
     const router=useRouter()
     const currentPath=router.pathname
-    
+  
   return (
    <nav className="bg-gray-100 fixed top-0 w-full shadow-lg">
   <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -48,8 +48,8 @@ export default function Navbar() {
         <div className="hidden sm:block sm:ml-6">
           <div className="flex space-x-4">
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-          <Link href="/"><a className={`${currentPath==="/" && "text-violet-600"} text-gray-500 px-3 py-2 rounded-md text-sm font-medium` }aria-current="page">Home</a></Link>
-          <Link href="/about"><a className={`${currentPath==="/about" && "text-violet-600"} text-gray-500 px-3 py-2 rounded-md text-sm font-medium` }aria-current="page">About me</a></Link>
+          <Link href="/"><a className={`${currentPath=="/" ? "text-violet-600" : 'text-gray-500' }  px-3 py-2 rounded-md text-sm font-medium` }aria-current="page">Home</a></Link>
+          <Link href="/about"><a className={`${currentPath=="/about" ? "text-violet-600" : 'text-gray-500'}  px-3 py-2 rounded-md text-sm font-medium` }aria-current="page">About me</a></Link>
       
           </div>
         </div>
@@ -64,11 +64,11 @@ export default function Navbar() {
       {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
       <Link href="/"><a  onClick={()=>{
         setToggle(!toggle)
-      }}  className={`${currentPath==="/" && "text-violet-600"} text-gray-500 px-3 py-2 rounded-md text-sm font-medium` }>Home</a></Link>
+      }}  className={`${currentPath==="/" ? "text-violet-600" : 'text-gray-500'}  px-3 py-2 rounded-md text-sm font-medium` }>Home</a></Link>
 
 <Link href="/about"><a  onClick={()=>{
         setToggle(!toggle)
-      }} className={`${currentPath==="/about" && "text-violet-600"} text-gray-500 px-3 py-2 rounded-md text-sm font-medium` }>About me</a></Link>
+      }} className={`${currentPath==="/about" ? "text-violet-600" : 'text-gray-500'}  px-3 py-2 rounded-md text-sm font-medium` }>About me</a></Link>
     </div>
   </div>}
 </nav>

@@ -37,8 +37,8 @@ export default function Home({allSyllabus}) {
     setshowSearch(true)
   }
   return (
-<div className='lg:mb-28 mb-44'>
-<div className='mx-auto mt-12 flex flex-col items-center justify-center'>
+<div className='lg:mb-28 mb-36'>
+<div className='mx-auto pt-12 flex flex-col items-center justify-center'>
 <h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1'>Notes For MSB Classes 5 - 10 </h1>
 
   <h1 className='mt-2 mb-4 text-purple-500 text-lg text-center'>Enter your question here </h1>

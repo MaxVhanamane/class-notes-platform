@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function about() {
   return (
-    <div className='container mx-auto mt-24 lg:w-1/2 px-6 flex items-center justify-center flex-col text-justify '>
+    <div className='container mx-auto pt-24 lg:w-1/2 px-6 flex items-center justify-center flex-col text-justify '>
       <h1 className='font-bold text-purple-900 text-2xl '>About me</h1>
       <p className='text-lg mt-6'> Hello,
         I am Suraj! I am from Solapur, India. I was born and raised there and I have been teaching secondary school   
