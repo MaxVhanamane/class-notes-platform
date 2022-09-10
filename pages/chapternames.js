@@ -12,7 +12,7 @@ export default function Part1({allSyllabus}) {
   return (
     <div className='pt-20 flex flex-col items-center justify-center'>
       <h1 className='text-center text-purple-900 font-bold text-xl'> Name of the Chapters</h1>
-      <ol className='mt-6 list-decimal flex flex-col gap-6'>
+      <ol className='mt-6 list-none flex flex-col gap-6'>
        {uniqueChapterNames.sort().map((chapter)=>{
         return <Link key={`${chapter}`} passHref href={`/chapters/${chapter}?part=${router.query.part}`}><li className='text-lg font-semibold hover:underline text-gray-700 cursor-pointer'>{chapter}</li></Link> 
        })}
