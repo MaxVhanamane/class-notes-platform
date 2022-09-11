@@ -71,6 +71,20 @@ export default function Home({allSyllabus}) {
 export async function getServerSideProps(context) {
   // Fetch data from external API
   connectDb()
-  let questions = await Syllabus.find({})
+  let questions = await Syllabus.find({
+    $or: [{
+        part: "part 1"
+        },
+        {
+            part: "part 2"
+        },
+        {
+            part: "grammer"
+        }
+    ],
+   
+},
+
+);
   return { props: { allSyllabus:JSON.parse(JSON.stringify(questions)) } }
 }
