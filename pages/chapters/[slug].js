@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import connectDb from './../../middleware/mongoose';
 import Syllabus from './../../models/syllabus';
 import ReactHtmlParser from 'react-html-parser';
+import Link  from 'next/link';
 export default function Chapters({allQuestions}) {
     const router = useRouter();
     const { slug } = router.query;
@@ -17,7 +18,9 @@ export default function Chapters({allQuestions}) {
         <div className='mt-4 p-4 lg:p-4 text-lg'>{ ReactHtmlParser(question.answer) }</div>
         </div>
       })}
+      {/* To go back to previous page use router.back() */}
      <div onClick={() => router.back()} className="flex justify-center items-center"><button  className=' bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Back</button></div>
+     <Link href="/" ><div className="flex justify-center items-center"><button  className=' bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Home</button></div></Link>
 
     </div>
   )

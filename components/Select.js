@@ -31,7 +31,7 @@ export default function Select({allSyllabus}) {
   defaultValue={"default"}
   onChange={(e) => setSelectClass(e.target.value) }
 >
-  <option value={"default"} disabled>
+  <option value={"default"} className="text-center" disabled>
     Select the class
 
   </option>
@@ -50,7 +50,7 @@ export default function Select({allSyllabus}) {
   defaultValue={"default"}
   onChange={(e) => setSubjectName(e.target.value)}
 >
-  <option value={"default"} disabled>
+  <option value={"default"} className="text-center" disabled>
     Select the subject
 
   </option>
@@ -70,12 +70,15 @@ export default function Select({allSyllabus}) {
   defaultValue={"default"}
   onChange={(e) => setPartName(e.target.value)}
 >
-  <option value={"default"} disabled>
+  <option value={"default"} className="text-center" disabled>
     Select the part
 
   </option>
 
-  {uniquepartName.map((part)=>{return <option key={part} className="text-center" value={part}>{part}</option> })}
+  {subjectName!="english"?uniquepartName.filter(ch => ch!="grammer").map((part)=>{
+    return <option key={part} className="text-center pr-12" value={part}>
+    {subjectName!="english"?part:"grammer"}</option> }):
+  <option  className="text-center" value="grammer">grammer</option>}
 
   
 </select>
