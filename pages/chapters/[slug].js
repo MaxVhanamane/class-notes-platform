@@ -4,6 +4,7 @@ import connectDb from './../../middleware/mongoose';
 import Syllabus from './../../models/syllabus';
 import ReactHtmlParser from 'react-html-parser';
 import Link  from 'next/link';
+import  Image  from 'next/image';
 export default function Chapters({allQuestions}) {
     const router = useRouter();
     const { slug } = router.query;
@@ -15,6 +16,7 @@ export default function Chapters({allQuestions}) {
         return <div className='container flex flex-col  w-screen mt-6 text-justify p-4' key={question._id}>
         <h1 className='font-bold text-2xl lg:text-3xl text-violet-700 pl-4'>{question.question}</h1>
         <hr></hr>
+        {question.image && <div className='mt-6 z-10 p-4 lg:p-4 text-lg'><Image src={question.image} objectFit="cover" width="400" height={200}/></div>}
         <div className='mt-4 p-4 lg:p-4 text-lg'>{ ReactHtmlParser(question.answer) }</div>
         </div>
       })}

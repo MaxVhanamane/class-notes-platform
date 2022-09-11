@@ -75,9 +75,9 @@ export default function Select({allSyllabus}) {
 
   </option>
 
-  {subjectName!="english"?uniquepartName.filter(ch => ch!="grammer").map((part)=>{
+  {subjectName!="english" && subjectName!="marathi"?uniquepartName.filter(ch => ch!="grammer").map((part)=>{
     return <option key={part} className="text-center pr-12" value={part}>
-    {subjectName!="english"?part:"grammer"}</option> }):
+    {subjectName!="english" && subjectName!="marathi" ?part:"grammer"}</option> }):
   <option  className="text-center" value="grammer">grammer</option>}
 
   
