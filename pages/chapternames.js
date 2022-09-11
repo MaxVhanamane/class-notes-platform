@@ -18,7 +18,7 @@ export default function Part1({allSyllabus}) {
        })}
       
       </ol>
-     <Link href="/"><button className='bg-purple-900 w-32 text-gray-100 hover:bg-purple-800  p-1 text-sm rounded-md mt-8'> Back</button></Link>
+<button onClick={() => router.back()} className='bg-purple-900 w-32 text-gray-100 hover:bg-purple-800  p-1 text-sm rounded-md mt-8'> Back</button>
     </div>
   )
 }

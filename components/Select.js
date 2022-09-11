@@ -89,6 +89,7 @@ export default function Select({allSyllabus}) {
 <Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${partName}`}><button disabled={partName==undefined ||subjectName==undefined || selectClass==undefined} className='bg-purple-900 w-32 text-gray-100 hover:bg-purple-800 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
 <p className="mt-2 text-gray-500 text-sm px-4 text-center">* Select all the above options to enable Get Chapters button.</p>
 
+<Link href="/scholarship"><p className="mt-12 text-blue-800 hover:text-blue-900 text-md px-4 border-2  border-purple-800 text-center cursor-pointer">For Scholarship/NMMS notes please click here</p></Link>
       
     </div>
   )
