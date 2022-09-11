@@ -22,8 +22,8 @@ export default function Chapters({allQuestions}) {
       })}
       {/* To go back to previous page use router.back() */}
       <div className='flex flex-row gap-4 justify-center items-center'>
-     <div onClick={() => router.back()} className="flex justify-center items-center"><button  className=' bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Back</button></div>
-     <div></div><Link href="/" ><div className="flex justify-center items-center"><button  className=' bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Home</button></div></Link>
+     <div onClick={() => router.back()} className="flex justify-center items-center"><button  className='outline-none bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Back</button></div>
+     <div></div><Link href="/" ><div className="flex justify-center items-center"><button  className=' outline-none bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Home</button></div></Link>
      </div>
     </div>
   )

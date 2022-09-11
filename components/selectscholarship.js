@@ -105,7 +105,7 @@ export default function SelectScholarship({allSyllabus}) {
 
 </div> */}
 
-<Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${courseName}`}><button disabled={courseName==undefined || subjectName==undefined || selectClass==undefined} className='bg-cyan-600 w-32 text-gray-50 hover:bg-cyan-700 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
+<Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${courseName}`}><button disabled={courseName==undefined || subjectName==undefined || selectClass==undefined} className='outline-none bg-cyan-600 w-32 text-gray-50 hover:bg-cyan-700 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
 <p className="mt-2 text-blue-500 text-sm px-4 text-center">* Select all the above options to enable Get Chapters button.</p>
 
       

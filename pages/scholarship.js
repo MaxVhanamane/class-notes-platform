@@ -66,7 +66,7 @@ export default function Home({allSyllabus}) {
 
 {!showSearch && <SelectScholarship allSyllabus={allSyllabus}/>}
 <div className='flex items-center justify-center'>
-<button onClick={() => router.back()} className='bg-blue-700 w-32 text-gray-100 hover:bg-blue-800  p-1 text-sm rounded-md mt-8'> Back</button>
+<button onClick={() => router.back()} className='outline-none bg-blue-700 w-32 text-gray-100 hover:bg-blue-800  p-1 text-sm rounded-md mt-8'> Back</button>
 </div>
 </div>
     
