@@ -25,7 +25,7 @@ export default function SelectScholarship({allSyllabus}) {
   <div  className='mt-6'> 
 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 text-center">Select the Class</label>
 <div className='mt-2'>
-<select className="outline-none bg-blue-50 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+<select className="outline-none bg-blue-500 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={selectClass}
   defaultValue={"default"}
   onChange={(e) => setSelectClass(e.target.value) }
@@ -44,7 +44,7 @@ export default function SelectScholarship({allSyllabus}) {
   <div  className='mt-6'> 
 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 text-center">Select the Course</label>
 <div className='mt-2'>
-<select className="outline-none bg-blue-50 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+<select className="outline-none bg-blue-500 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={courseName}
   defaultValue={"default"}
   onChange={(e) => setCourseName(e.target.value) }
@@ -64,7 +64,7 @@ export default function SelectScholarship({allSyllabus}) {
   <div  className='mt-8'> 
 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 text-center">Select the Subject</label>
 <div className='mt-2'>
-<select className="outline-none bg-blue-50 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+<select className="outline-none bg-blue-500 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={subjectName}
   defaultValue={"default"}
   onChange={(e) => setSubjectName(e.target.value)}
