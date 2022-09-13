@@ -5,7 +5,6 @@ import Syllabus from './../models/syllabus';
 import SelectScholarship from '../components/selectscholarship'
 import {useRouter} from 'next/router';
 export default function Home({allSyllabus}) {
-    console.log(allSyllabus)
   const [searchResult,setSearchResult]=useState([])
   const[searchTerm,setSearchTerm]=useState("")
   const[showSearch,setshowSearch]=useState(false)
@@ -49,7 +48,7 @@ export default function Home({allSyllabus}) {
 </div>
 {!showSearch && <div>
 
-<h1 className='text-center text-blue-500 font-bold text-2xl mt-10'> For chapterwise questions please select the following options.</h1>
+<h1 className='text-center text-blue-500 font-bold md:text-2xl text-xl mx-1 mt-10'> For chapterwise questions please select the following options.</h1>
 </div>}
 {showSearch &&  <div className='container  mt-2  mb-6'>
 {searchResult.length>0 &&<h1 className="font-bold sm:text-2xl text-xl mt-6 text-center text-blue-500">Search Results</h1>}
