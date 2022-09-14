@@ -5,9 +5,16 @@ export default function SelectScholarship({allSyllabus}) {
   let classNm= allSyllabus.map((cl)=>{return cl.classNm})
   let uniqueclassNm = [...new Set(classNm)].sort(function (a, b) {  return a - b;  });
 
+  // let subject= allSyllabus.map((sub)=>{return sub.subject})
 
-  let subject= allSyllabus.map((sub)=>{return sub.subject})
-  let uniquesubjectName= [...new Set(subject)]
+  let scholarshipSubjectsFilter= allSyllabus.filter((sub)=>{return sub.part==="scholarship"})
+  let NmmsSubjectsFilter= allSyllabus.filter((sub)=>{return sub.part==="NMMS"})
+  const scholarshipSubjects= scholarshipSubjectsFilter.map((sub)=>{return sub.subject})
+  const NmmsSubjects= NmmsSubjectsFilter.map((sub)=>{return sub.subject})
+ 
+  
+  let scholarshipSubjectNames= [...new Set(scholarshipSubjects)]
+  let NmmsSubjectNames= [...new Set(NmmsSubjects)]
 
   let course= allSyllabus.map((course)=>{return course.part})
   let uniqueCourseName= [...new Set(course)].sort()
@@ -15,7 +22,7 @@ export default function SelectScholarship({allSyllabus}) {
   const [subjectName, setSubjectName] = useState();
   const [courseName, setCourseName] = useState();
    
-
+console.log(courseName,"e")
   return (
     <div className='flex flex-col items-center justify-center'>
      
@@ -47,7 +54,7 @@ export default function SelectScholarship({allSyllabus}) {
 <select className="outline-none bg-blue-500 border border-blue-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={courseName}
   defaultValue={"default"}
-  onChange={(e) => setCourseName(e.target.value) }
+  onChange={(e) => {setCourseName(e.target.value), setSubjectName("default")}}
 >
   <option value={"default"} className="text-center disabled:text-gray-300" disabled>
     Select the course
@@ -64,16 +71,19 @@ export default function SelectScholarship({allSyllabus}) {
   <div  className='mt-8'> 
 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 text-center">Select the Subject</label>
 <div className='mt-2'>
-<select className="outline-none bg-blue-500 border border-blue-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+<select  className=" disabled:bg-pink-500 outline-none bg-blue-500 border border-blue-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={subjectName}
   defaultValue={"default"}
-  onChange={(e) => setSubjectName(e.target.value)}
+  onChange={(e) => setSubjectName(e.target.value) }
 >
-  <option value={"default"} className="text-center disabled:text-gray-300" disabled>
+  <option value={"default"}  className="text-center disabled:text-gray-300" disabled>
     Select the subject
 
   </option>
-  {uniquesubjectName.map((sub)=>{return <option key={sub} className="text-center" value={sub}>{sub}</option> })}
+  {
+   courseName==="scholarship" ? scholarshipSubjectNames.map((sub)=>{return <option  key={sub} className="text-center" value={sub}>{sub}</option> })
+   :NmmsSubjectNames.map((sub)=>{return <option key={sub} className="text-center" value={sub}>{sub}</option> })
+  }
 
 </select>
 </div>
@@ -105,7 +115,7 @@ export default function SelectScholarship({allSyllabus}) {
 
 </div> */}
 
-<Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${courseName}`}><button disabled={courseName==undefined || subjectName==undefined || selectClass==undefined} className='outline-none bg-cyan-600 w-32 text-gray-50 hover:bg-cyan-700 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
+<Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${courseName}`}><button disabled={courseName==undefined || subjectName==undefined ||  selectClass==undefined || subjectName==="default"} className='outline-none bg-cyan-600 w-32 text-gray-50 hover:bg-cyan-700 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
 <p className="mt-2 text-blue-500 text-sm px-4 text-center">* Select all the above options to enable Get Chapters button.</p>
 
       

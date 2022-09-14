@@ -48,7 +48,7 @@ export default function Select({allSyllabus}) {
 <select className="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={subjectName}
   defaultValue={"default"}
-  onChange={(e) => setSubjectName(e.target.value)}
+  onChange={(e) => {setSubjectName(e.target.value) ,setPartName("default")}}
 >
   <option value={"default"} className="text-center" disabled>
     Select the subject
@@ -86,7 +86,7 @@ export default function Select({allSyllabus}) {
 
 </div>
 
-<Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${partName}`}><button disabled={partName==undefined ||subjectName==undefined || selectClass==undefined} className='outline-none bg-purple-900 w-32 text-gray-100 hover:bg-purple-800 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
+<Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${partName}`}><button disabled={partName==undefined ||subjectName==undefined || selectClass==undefined || partName==="default"} className='outline-none bg-purple-900 w-32 text-gray-100 hover:bg-purple-800 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
 <p className="mt-2 text-gray-500 text-sm px-4 text-center">* Select all the above options to enable Get Chapters button.</p>
 
 <Link href="/scholarship"><p className="mt-12 font-semibold text-blue-800 hover:text-blue-600 text-sm px-4 border-2  border-purple-700 text-center cursor-pointer">For Scholarship/NMMS notes please click here</p></Link>
