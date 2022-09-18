@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="flex-shrink-0 flex items-center">
           {/* <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500" alt="Workflow"/>
           <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500" alt="Workflow"/> */}
-          <span className={`block h-8 w-auto text-white px-2 rounded-xl ${currentPath=="/scholarship" ?"bg-blue-700":"bg-purple-900"} font-bold text-xl`}>Shejale Sir </span>
+          <span className="block h-8 w-auto text-white px-2 rounded-xl bg-purple-900 font-bold text-xl">Shejale Sir </span>
         </div>
         <div className="hidden sm:block sm:ml-6">
           <div className="flex space-x-4">

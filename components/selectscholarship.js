@@ -32,7 +32,7 @@ console.log(courseName,"e")
   <div  className='mt-6'> 
 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 text-center">Select the Class</label>
 <div className='mt-2'>
-<select className="outline-none bg-blue-500 border border-blue-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+<select className="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={selectClass}
   defaultValue={"default"}
   onChange={(e) => setSelectClass(e.target.value) }
@@ -51,7 +51,7 @@ console.log(courseName,"e")
   <div  className='mt-6'> 
 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 text-center">Select the Course</label>
 <div className='mt-2'>
-<select className="outline-none bg-blue-500 border border-blue-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+<select className="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={courseName}
   defaultValue={"default"}
   onChange={(e) => {setCourseName(e.target.value), setSubjectName("default")}}
@@ -71,7 +71,7 @@ console.log(courseName,"e")
   <div  className='mt-8'> 
 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 text-center">Select the Subject</label>
 <div className='mt-2'>
-<select  className=" disabled:bg-pink-500 outline-none bg-blue-500 border border-blue-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-blue-700 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+<select className="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   value={subjectName}
   defaultValue={"default"}
   onChange={(e) => setSubjectName(e.target.value) }
@@ -115,8 +115,8 @@ console.log(courseName,"e")
 
 </div> */}
 
-<Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${courseName}`}><button disabled={courseName==undefined || subjectName==undefined ||  selectClass==undefined || subjectName==="default"} className='outline-none bg-cyan-600 w-32 text-gray-50 hover:bg-cyan-700 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
-<p className="mt-2 text-blue-500 text-sm px-4 text-center">* Select all the above options to enable Get Chapters button.</p>
+<Link href={`/chapternames?classNm=${selectClass}&subject=${subjectName}&part=${courseName}`}><button disabled={courseName==undefined || subjectName==undefined ||  selectClass==undefined || subjectName==="default"} className='outline-none bg-purple-900 w-32 text-gray-100 hover:bg-purple-800 disabled:bg-gray-500  p-1 text-sm rounded-md mt-8'> Get Chapters</button></Link>
+<p className="mt-2 text-gray-500 text-sm px-4 text-center">* Select all the above options to enable Get Chapters button.</p>
 
       
     </div>

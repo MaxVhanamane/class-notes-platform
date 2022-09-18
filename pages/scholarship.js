@@ -39,20 +39,20 @@ export default function Home({allSyllabus}) {
   return (
 <div className='lg:mb-28 mb-36'>
 <div className='mx-auto pt-12 flex flex-col items-center justify-center'>
-<h1 className=' mb-4 bg-blue-500 w-full text-white text-lg text-center py-1'>Notes For Scholarship/NMMS </h1>
+<h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1'>Notes For Scholarship/NMMS </h1>
 
-  <h1 className='mt-2 mb-4 text-blue-500 text-lg text-center'>Enter your question here </h1>
+  <h1 className='mt-2 mb-4 text-purple-700 text-lg text-center'>Enter your question here </h1>
 <input type="text" placeholder="Enter your question " className="border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2
    bg-white rounded-xl sm:p-6 sm:w-96 p-[0.5rem] lg:p-[0.5rem] w-64 sm:pl-[3rem] lg:pl-6 pl-4
    outline-none  shadow-neutral-300" onChange={handleSearch} />
 </div>
 {!showSearch && <div>
 
-<h1 className='text-center text-blue-500 font-bold md:text-2xl text-xl mx-1 mt-10'> For chapterwise questions please select the following options.</h1>
+<h1 className='text-center text-purple-700 font-bold md:text-2xl text-xl mx-1 mt-10'> For chapterwise questions please select the following options.</h1>
 </div>}
 {showSearch &&  <div className='container  mt-2  mb-6'>
-{searchResult.length>0 &&<h1 className="font-bold sm:text-2xl text-xl mt-6 text-center text-blue-500">Search Results</h1>}
-{searchResult.length===0&& <h1 className="text-center font-bold sm:text-2xl text-xl mt-4 text-blue-500">Sorry! No results found.</h1>}
+{searchResult.length>0 &&<h1 className="font-bold sm:text-2xl text-xl mt-6 text-center text-purple-700">Search Results</h1>}
+{searchResult.length===0&& <h1 className="text-center font-bold sm:text-2xl text-xl mt-4 text-red-500">Sorry! No results found.</h1>}
      
       {searchResult.map((question)=>{
         return <div className='container flex flex-col  w-screen mt-6 text-justify p-4' key={question._id}>
@@ -65,7 +65,7 @@ export default function Home({allSyllabus}) {
 
 {!showSearch && <SelectScholarship allSyllabus={allSyllabus}/>}
 <div className='flex items-center justify-center'>
-<button onClick={() => router.back()} className='outline-none bg-blue-700 w-32 text-gray-100 hover:bg-blue-800  p-1 text-sm rounded-md mt-8'> Back</button>
+<button onClick={() => router.back()} className='outline-none bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Back</button>
 </div>
 </div>
     
