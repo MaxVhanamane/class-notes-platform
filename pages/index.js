@@ -41,7 +41,7 @@ export default function Home({allSyllabus}) {
 
   <h1 className='mt-2 mb-4 text-purple-500 text-lg text-center'>Enter your question here </h1>
 <input type="text" placeholder="Enter your question " className="border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2
-   bg-white rounded-xl sm:p-6 sm:w-96 p-[0.5rem] lg:p-[0.5rem] w-64 sm:pl-[3rem] lg:pl-6 pl-4
+   bg-white rounded-xl sm:p-6 sm:w-96 p-[0.5rem] lg:p-[0.5rem] w-64 sm:pl-[3rem] lg:pl-6 pl-4 md:p-[0.8rem]
    outline-none  shadow-neutral-300" onChange={handleSearch} />
 </div>
 {!showSearch && <div>
