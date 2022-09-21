@@ -22,7 +22,6 @@ export default function SelectScholarship({allSyllabus}) {
   const [subjectName, setSubjectName] = useState();
   const [courseName, setCourseName] = useState();
    
-console.log(courseName,"e")
   return (
     <div className='flex flex-col items-center justify-center'>
      
