@@ -14,7 +14,7 @@ export default function Part1({allSyllabus}) {
       <h1 className='text-center text-purple-900 font-bold text-xl'> Name of the Chapters</h1>
       <ol className='mt-6 list-none flex flex-col gap-6'>
        {uniqueChapterNames.sort().map((chapter)=>{
-        return <Link key={`${chapter}`} passHref href={`/chapters/${chapter}?part=${router.query.part}`}><li className='text-lg font-semibold hover:underline text-gray-700 cursor-pointer'>{chapter}</li></Link> 
+        return <Link key={`${chapter}`} passHref href={`/chapters/${chapter}?part=${router.query.part}`}><li className='text-lg font-semibold hover:text-violet-900 text-gray-700 cursor-pointer'>{chapter}</li></Link> 
        })}
       
       </ol>

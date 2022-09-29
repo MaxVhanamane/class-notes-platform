@@ -37,7 +37,7 @@ export default function Home({allSyllabus}) {
   return (
 <div className='lg:mb-28 mb-36'>
 <div className='mx-auto pt-12 flex flex-col items-center justify-center'>
-<h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1'>Notes For MSB Classes 5 - 10 </h1>
+<h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1'><span className='animate-pulse'>Notes For MSB Classes 5 - 10</span> </h1>
 
   <h1 className='mt-2 mb-4 text-purple-500 text-lg text-center'>Enter your question here </h1>
 <input type="text" placeholder="Enter your question " className="border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2
