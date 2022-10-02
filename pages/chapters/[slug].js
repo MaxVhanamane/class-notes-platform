@@ -5,12 +5,22 @@ import Syllabus from './../../models/syllabus';
 import ReactHtmlParser from 'react-html-parser';
 import Link  from 'next/link';
 import  Image  from 'next/image';
+import Head from "next/head"
 export default function Chapters({allQuestions}) {
     const router = useRouter();
     const { slug } = router.query;
+ 
     const part = (router.query.part).replace(/['"]+/g, '').replace(/\s+/, "") ;
 
   return (
+    <>
+    <Head>
+<title> {`${ slug }`} </title>
+<meta name="description" content={allQuestions.map((question)=>{
+  return question.question
+})}/>
+
+    </Head>
     <div className='container  mt-16  mb-32'>
       {allQuestions.map((question)=>{
         return <div className='container flex flex-col  w-screen mt-6 text-justify p-4' key={question._id}>
@@ -26,6 +36,7 @@ export default function Chapters({allQuestions}) {
      <div></div><Link href="/" ><div className="flex justify-center items-center"><button  className=' outline-none bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-4'> Home</button></div></Link>
      </div>
     </div>
+    </>
   )
 }
 

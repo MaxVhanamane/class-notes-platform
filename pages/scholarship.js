@@ -4,6 +4,7 @@ import connectDb from './../middleware/mongoose';
 import Syllabus from './../models/syllabus';
 import SelectScholarship from '../components/selectscholarship'
 import {useRouter} from 'next/router';
+import Head from "next/head"
 export default function Home({allSyllabus}) {
   const [searchResult,setSearchResult]=useState([])
   const[searchTerm,setSearchTerm]=useState("")
@@ -37,6 +38,11 @@ export default function Home({allSyllabus}) {
     setshowSearch(true)
   }
   return (
+    <>
+    <Head>
+      <title>Scholarship/NMMS Notes</title>
+      <meta name="description" content="Students who are preparing for the scholarship or NMMS exams can acces the notes for it here."/>
+    </Head>
 <div className='lg:mb-28 mb-36'>
 <div className='mx-auto pt-12 flex flex-col items-center justify-center'>
 <h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1 '> <span className='animate-pulse'>Notes For Scholarship/NMMS</span> </h1>
@@ -68,7 +74,7 @@ export default function Home({allSyllabus}) {
 <button onClick={() => router.back()} className='outline-none bg-purple-900 w-32 hover:bg-purple-800  text-gray-100  p-1 text-sm rounded-md mt-8'> Back</button>
 </div>
 </div>
-    
+</>
   )
 }
 

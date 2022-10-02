@@ -1,4 +1,5 @@
 import { useEffect,useState } from 'react';
+import Head from "next/head"
 import ReactHtmlParser from 'react-html-parser';
 import connectDb from './../middleware/mongoose';
 import Syllabus from './../models/syllabus';
@@ -35,6 +36,12 @@ export default function Home({allSyllabus}) {
     setshowSearch(true)
   }
   return (
+    <>
+    <Head>
+   <title>Notes for the Maharashtra state board students</title>
+   <meta name="description" content="Maharashtra state board notes for classes 5 to 10. Notes are available in marathi and english language. "></meta>
+
+    </Head>
 <div className='lg:mb-28 mb-36'>
 <div className='mx-auto pt-12 flex flex-col items-center justify-center'>
 <h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1'><span className='animate-pulse'>Notes For MSB Classes 5 - 10</span> </h1>
@@ -63,6 +70,7 @@ export default function Home({allSyllabus}) {
 
 {!showSearch && <Select allSyllabus={allSyllabus}/>}
 </div>
+</>
     
   )
 }

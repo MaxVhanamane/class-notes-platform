@@ -3,13 +3,18 @@ import Link from "next/link"
 import connectDb from './../middleware/mongoose';
 import Syllabus from './../models/syllabus';
 import { useRouter } from "next/router";
-
+import Head from "next/head"
 export default function Part1({allSyllabus}) {
     let chapters= allSyllabus.map((chapter)=>{return chapter.chapterName})
     let uniqueChapterNames = [...new Set(chapters)].sort()
     const router = useRouter();
 
   return (
+    <>
+    <Head >
+<title>Chapter Names </title>
+<meta name='description' content={`${uniqueChapterNames}`}/>
+    </Head>
     <div className='pt-20 flex flex-col items-center justify-center'>
       <h1 className='text-center text-purple-900 font-bold text-xl'> Name of the Chapters</h1>
       <ol className='mt-6 list-none flex flex-col gap-6'>
@@ -20,6 +25,7 @@ export default function Part1({allSyllabus}) {
       </ol>
 <button onClick={() => router.back()} className='outline-none bg-purple-900 w-32 text-gray-100 hover:bg-purple-800  p-1 text-sm rounded-md mt-8'> Back</button>
     </div>
+    </>
   )
 }
 
