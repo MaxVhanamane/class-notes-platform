@@ -2,28 +2,32 @@ import React from 'react'
 import { useRouter } from "next/router";
 import connectDb from './../../middleware/mongoose';
 import Syllabus from './../../models/syllabus';
+//ReactHtmlParser- To convert html code that is coming as string from backend to proper renderable html.
 import ReactHtmlParser from 'react-html-parser';
 import Link  from 'next/link';
 import  Image  from 'next/image';
 import Head from "next/head"
+
 export default function Chapters({allQuestions}) {
     const router = useRouter();
     const { slug } = router.query;
- 
-    const part = (router.query.part).replace(/['"]+/g, '').replace(/\s+/, "") ;
+
+ const title = ` ${slug} `;
+
+    // const part = (router.query.part).replace(/['"]+/g, '').replace(/\s+/, "") ;
 
   return (
     <>
     <Head>
-<title> {`${ slug }`} </title>
+      <title>{title}</title>
 <meta name="description" content={allQuestions.map((question)=>{
   return question.question
 })}/>
 
     </Head>
-    <div className='container  mt-16  mb-32'>
+    <div className='md:px-8  mt-16  mb-32  break-words lg:w-[70rem] lg:mx-auto'>
       {allQuestions.map((question)=>{
-        return <div className='container flex flex-col  w-screen mt-6 text-justify p-4' key={question._id}>
+        return <div className=' flex flex-col   mt-6 text-justify p-4' key={question._id}>
         <h1 className='font-bold text-2xl lg:text-3xl text-violet-700 pl-4'>{question.question}</h1>
         <hr></hr>
         {question.image && <div className='mt-6 z-10 p-4 lg:p-4 text-lg'><Image src={question.image} objectFit="cover" width="400" height={200}/></div>}
