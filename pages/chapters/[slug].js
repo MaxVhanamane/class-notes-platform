@@ -25,7 +25,7 @@ export default function Chapters({allQuestions}) {
 })}/>
 
     </Head>
-    <div className='md:px-8  mt-16  mb-32  break-words lg:w-[70rem] lg:mx-auto'>
+    <div className='md:px-8  mt-16  mb-32  break-words lg:w-9/12 lg:mx-auto'>
       {allQuestions.map((question)=>{
         return <div className=' flex flex-col   mt-6 text-justify p-4' key={question._id}>
         <h1 className='font-bold text-2xl lg:text-3xl text-violet-700 pl-4'>{question.question}</h1>
