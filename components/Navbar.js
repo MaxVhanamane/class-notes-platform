@@ -5,6 +5,7 @@ export default function Navbar() {
     const [toggle,setToggle]=useState(false)
     const router=useRouter()
     const currentPath=router.pathname
+    const [changeHamburgerIcon,setChangeHamburgurIcon]=useState(true)
   
   return (
    <nav className="bg-gray-100 fixed z-20 top-0 w-full shadow-lg">
@@ -12,7 +13,7 @@ export default function Navbar() {
     <div className="relative flex items-center justify-between h-12">
       <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
         {/* <!-- Mobile menu button--> */}
-        <button onClick={()=>{setToggle(!toggle)}} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white " aria-controls="mobile-menu" aria-expanded="false">
+        <button onClick={()=>{setToggle(!toggle)}} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-600   focus:outline-none  " aria-controls="mobile-menu" aria-expanded="false">
           <span className="sr-only">Open main menu</span>
           {/* <!--
             Icon when menu is closed.
@@ -21,19 +22,13 @@ export default function Navbar() {
 
             Menu open: "hidden", Menu closed: "block"
           --> */}
-          <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+      {  changeHamburgerIcon?  <svg onClick={()=>setChangeHamburgurIcon(!changeHamburgerIcon)} className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          {/* <!--
-            Icon when menu is open.
-
-            Heroicon name: outline/x-mark
-
-            Menu open: "block", Menu closed: "hidden"
-          --> */}
-          <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+          </svg>:
+       
+          <svg onClick={()=>setChangeHamburgurIcon(!changeHamburgerIcon)} className=" h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          </svg>}
         </button>
       </div>
 
@@ -64,10 +59,12 @@ export default function Navbar() {
       {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
       <Link href="/"><a  onClick={()=>{
         setToggle(!toggle)
+        setChangeHamburgurIcon(!changeHamburgerIcon)
       }}  className={`${currentPath==="/" ? "text-violet-600" : 'text-gray-500'}  px-3 py-2 rounded-md text-sm font-medium` }>Home</a></Link>
 
 <Link href="/about"><a  onClick={()=>{
         setToggle(!toggle)
+        setChangeHamburgurIcon(!changeHamburgerIcon)
       }} className={`${currentPath==="/about" ? "text-violet-600" : 'text-gray-500'}  px-3 py-2 rounded-md text-sm font-medium` }>About me</a></Link>
     </div>
   </div>}
