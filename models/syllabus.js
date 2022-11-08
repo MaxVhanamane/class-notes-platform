@@ -7,8 +7,7 @@ const SyllabusSchema = new mongoose.Schema({
     classNm: { type: Number, required: true },
     question: { type: String, required: true , unique: true},
     answer: { type: String, required: true },
-    image: { type: String,default:"" },
-    importanceOfQuestion: { type: String, default:"low"},
+    image: { type: String,default:"" }
 }, { timestamps: true });
 const Syllabus = mongoose.models.Syllabus || mongoose.model("Syllabus", SyllabusSchema)
 

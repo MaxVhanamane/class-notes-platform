@@ -10,6 +10,9 @@ import Head from "next/head"
 
 export default function Chapters({allQuestions}) {
     const router = useRouter();
+    const myLoader = ({ src, width, quality }) => {
+      return `${src}?w=${width}&q=${quality || 100}`;
+    };
     const { slug } = router.query;
 
  const title = ` ${slug} `;
@@ -30,7 +33,8 @@ export default function Chapters({allQuestions}) {
         return <div className=' flex flex-col   mt-6 text-justify p-4' key={question._id}>
         <h1 className='font-bold text-2xl lg:text-3xl text-violet-700 pl-4'>{question.question}</h1>
         <hr></hr>
-        {question.image && <div className='mt-6 z-10 p-4 lg:p-4 text-lg'><Image src={question.image} objectFit="cover" width="400" height={200}/></div>}
+        {question.image && <div className='mt-6 z-10 p-4 lg:p-4 text-lg'><Image  loader={myLoader}
+                  alt="image" src={question.image} objectFit="cover" width={300} height={300}/></div>}
         <div className='mt-4 p-4 lg:p-4 text-lg'>{ ReactHtmlParser(question.answer) }</div>
         </div>
       })}
