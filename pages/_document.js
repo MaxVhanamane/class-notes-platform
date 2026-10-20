@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang="en">
         <Head>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-<meta httpEquiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
         </Head>
       <body>
         <Main />

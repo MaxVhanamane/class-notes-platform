@@ -118,7 +118,8 @@ export default function EditSyllabus() {
     // To show proper message if no data found
     setSearchButtonClicked(true)
     setSearchTerm(()=>"")
-    // getData();
+     // If admin edits the subject name or class name then to get new name we will call getData
+     getData();
   };
 
   // to handle delete button
@@ -145,8 +146,16 @@ export default function EditSyllabus() {
         draggable: true,
         progress: undefined,
       });
-
+    
+    // To get the latest data if admin changes class Name or subject name
       handleSelectBasedSearch();
+        // While editing If I change the subject name or ClassName and save it. Then When I close the edit modal then 
+      // Select based search will automatically select the latest value (If you don't add following lines then It will still show you the latest value because you called handleSelectBasedSearch. but you won't be able to search with that value)
+      // If I don't add the following line then I will have to refresh the page or use search bar to search the content because the state of 
+      // selectSubject or selectClassName is still the old one.
+      setSelectSubject(()=>testDetails.subject)
+      setSelectClass(()=>testDetails.classNm)
+
     } else {
       toast.error("Chapter not found!", {
         autoClose: 2000,
@@ -357,7 +366,7 @@ let handleUpload = () => {
           </div>
         </div>
 
-        <main className=" flex items-center  flex-col lg:ml-60 sticky top-0 bg-[#f9fafb] h-screen">
+        <main className=" flex items-center  flex-col lg:ml-60 sticky top-0  h-screen">
           <div>
             <input
               type="text"

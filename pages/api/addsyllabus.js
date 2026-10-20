@@ -13,7 +13,6 @@ export default async function handler(req, res) {
                 question: req.body[i].question,
                 answer: req.body[i].answer,
                 image: req.body[i].img,
-                importanceOfQuestion: req.body[i].importanceOfQuestion,
             })
             await question.save()
         }

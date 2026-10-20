@@ -3,8 +3,10 @@ import Head from "next/head"
 import ReactHtmlParser from 'react-html-parser';
 import connectDb from './../middleware/mongoose';
 import Syllabus from './../models/syllabus';
+import Test from './../models/test';
 import Select from '../components/Select'
-export default function Home({allSyllabus}) {
+import Link from "next/link"
+export default function Home({allSyllabus,tests}) {
   const [searchResult,setSearchResult]=useState([])
   const[searchTerm,setSearchTerm]=useState("")
   const[showSearch,setshowSearch]=useState(false)
@@ -45,6 +47,10 @@ export default function Home({allSyllabus}) {
 <div className='lg:mb-28 mb-36'>
 <div className='mx-auto pt-12 flex flex-col items-center justify-center'>
 <h1 className=' mb-4 bg-purple-800 w-full text-white text-lg text-center py-1'><span className='animate-pulse'>Notes For MSB Classes 5 - 10</span> </h1>
+
+{tests.map((test)=>{
+  return <div key={test.url}><Link href={test.url}><a className='animate-pulse mb-4  w-full text-blue-600 text-lg text-center font-semibold py-1 cursor-pointer hover:text-blue-400'  target="__blank">{`Click here to take ${test.subject} test (class - ${test.classNm})`}</a></Link></div>
+})}
 
   <h1 className='mt-2 mb-4 text-purple-500 text-lg text-center'>Enter your question here </h1>
 <input type="text" placeholder="Enter your question " className="border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2
@@ -94,5 +100,7 @@ export async function getServerSideProps(context) {
 },
 
 );
-  return { props: { allSyllabus:JSON.parse(JSON.stringify(questions)) } }
+
+let tests = await Test.find({});
+  return { props: { allSyllabus:JSON.parse(JSON.stringify(questions)),tests:JSON.parse(JSON.stringify(tests)) } }
 }

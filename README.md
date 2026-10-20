@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Class Notes Platform
 
-## Getting Started
+A web-based learning platform that helps students access class notes organized by class, subject, part, and chapter. It also provides study resources and practice tests for scholarship and NMMS examinations.
 
-First, run the development server:
+## How It Works
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- **Organized Study Materials:** Students select their class, subject, and part to find chapters and access the notes related to each chapter.
+- **Scholarship and NMMS Preparation:** Provides study materials organized to help students prepare for scholarship and NMMS examinations.
+- **Practice Tests:** Supports sharing Google Forms links for practice tests, allowing students to access quizzes directly from the platform.
+- **Admin Panel:** Allows administrators to manage classes, subjects, parts, chapters, notes, and learning resources.
+- **Simple Student Interface:** Designed with a clean, intuitive interface so students can easily navigate the platform and find the study materials they need.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Achievement
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- **First Place at a Science Exhibition:** The platform received first place at a science exhibition when presented by the client.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Screenshots
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Homepage
 
-## Learn More
+![Homepage](./screenshots/homepage.png)
 
-To learn more about Next.js, take a look at the following resources:
+### Chapters Page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Chapters Page](./screenshots/chapters-page.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Chapter Details
 
-## Deploy on Vercel
+![Chapter Details Page](./screenshots/chapter-details-page.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Edit Syllabus
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Edit Syllabus Page](./screenshots/edit-syllabus-page.png)
+
+### Admin Panel
+
+![Admin Panel](./screenshots/admin-panel.png)
+
+## Tech Stack
+
+- Next.js
+- React
+- MongoDB
+- JavaScript

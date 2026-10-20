@@ -35,10 +35,10 @@ export default function DashboardSidebar() {
       </div>
       <aside
         ref={dashBoardToggler}
-        className="overflow-y-scroll h-full  shadow-md rounded-sm  sidebar w-60 fixed top-0 left-0 bg-gray-100 z-20 transform transition-transform -translate-x-full lg:translate-x-0 duration-300 "
+        className="overflow-y-scroll h-full  shadow-md rounded-sm  sidebar w-60 fixed top-0 left-0  z-20 transform transition-transform -translate-x-full lg:translate-x-0 duration-300 "
         aria-label="Sidebar"
       >
-        <div className="overflow-y-auto py-4 px-3 h-full bg-gray-50  ">
+        <div className="overflow-y-auto py-4 px-3 h-full   ">
           <div
             onClick={toggleSidebar}
             className="fixed right-4 top-4 text-xl text-gray-500 lg:hidden"
@@ -85,6 +85,41 @@ export default function DashboardSidebar() {
               </li>
             </Link>
 
+            <Link href="/max/dashboard/test">
+              <li onClick={toggleSidebar}>
+                <a
+                  className={`cursor-pointer flex items-center p-2 ${
+                    currentPath == "/max/dashboard/test"
+                      ? "text-violet-600"
+                      : "text-gray-500"
+                  }  text-base font-normal  rounded-lg  hover:bg-gray-100 transition ease-out  hover:-translate-y-1 hover:scale-105 duration-300 `}
+                >
+                  <IoIosAddCircle className="flex-shrink-0 w-6 h-6  transition duration-75   " />
+                  <span className="flex-1 ml-3 whitespace-nowrap">
+                    Add Test
+                  </span>
+                </a>
+              </li>
+            </Link>
+  
+
+            <Link href="/max/dashboard/edittest">
+              <li onClick={toggleSidebar}>
+                <a
+                  className={`cursor-pointer flex items-center p-2 ${
+                    currentPath == "/max/dashboard/edittest"
+                      ? "text-violet-600"
+                      : "text-gray-500"
+                  }  text-base font-normal  rounded-lg  hover:bg-gray-100 transition ease-out  hover:-translate-y-1 hover:scale-105 duration-300 `}
+                >
+                  <MdModeEdit className="flex-shrink-0 w-6 h-6  transition duration-75   " />
+                  <span className="flex-1 ml-3 whitespace-nowrap">
+                    Edit Test
+                  </span>
+                </a>
+              </li>
+            </Link>
+  
             <Link href="/">
               <li onClick={toggleSidebar}>
                 <a className=" cursor-pointer flex items-center p-2 text-base font-normal text-gray-500 rounded-lg  hover:bg-gray-100 transition ease-out  hover:-translate-y-1 hover:scale-105 duration-300 ">
